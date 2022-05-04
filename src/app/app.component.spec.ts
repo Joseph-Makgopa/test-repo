@@ -10,6 +10,6 @@ describe('AppComponent',()=>{
   })
 
   it("should have a title",()=>{
-      expect(fixture.title).toEqual("app")
+      expect(fixture.title).toEqual("new")
   })
 })
