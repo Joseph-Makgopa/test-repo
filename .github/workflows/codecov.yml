@@ -23,9 +23,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install dependencies
+      run: cd ang-app
       run: npm install
 
     - name: Run tests
+      run: cd ang-app
       run: npm run test
 
     - name: Upload coverage to Codecov
