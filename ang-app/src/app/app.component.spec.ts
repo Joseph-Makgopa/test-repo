@@ -1,31 +1,15 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { isExpressionFactoryMetadata } from "@angular/compiler/src/render3/r3_factory";
+import { IterableDiffers } from "@angular/core";
+import { AppComponent } from "./app.component";
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
+describe('AppComponent',()=>{
+  let fixture:AppComponent;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+  beforeEach(()=>{
+      fixture = new AppComponent();
+  })
 
-  it(`should have as title 'ang-app'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ang-app');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ang-app app is running!');
-  });
-});
+  it("should have a title",()=>{
+      expect(fixture.title).toEqual("ang-app")
+  })
+})
